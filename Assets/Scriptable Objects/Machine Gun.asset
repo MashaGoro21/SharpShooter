@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 1
   Firerate: 0.2
+  HitVFXPrefab: {fileID: 1539757750865706146, guid: 33c4956abc6448a4d8232fc3fdf11d33, type: 3}
