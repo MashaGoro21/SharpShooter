@@ -30,6 +30,18 @@ public class ActiveWeapon : MonoBehaviour
         HandleShoot();
     }
 
+    public void SwitchWeapon(WeaponSO weaponSO)
+    {
+        if(currentWeapon)
+        {
+            Destroy(currentWeapon.gameObject);
+        }
+
+        Weapon newWeapon = Instantiate(weaponSO.WeaponPrefab, transform).GetComponent<Weapon>();
+        currentWeapon = newWeapon;
+        this.weaponSO = weaponSO;
+    }
+
     private void HandleShoot()
     {
         if (!starterAssetsInputs.shoot) return;
@@ -41,6 +53,9 @@ public class ActiveWeapon : MonoBehaviour
             timeSinceLastShot = 0f;
         }
 
-        starterAssetsInputs.ShootInput(false);
+        if(!weaponSO.IsAutomatic)
+        {
+            starterAssetsInputs.ShootInput(false);
+        }
     }
 }
