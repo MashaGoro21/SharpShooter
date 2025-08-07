@@ -5,9 +5,9 @@ public class Projectile : MonoBehaviour
     [SerializeField] float speed = 30f;
     [SerializeField] GameObject projectileHitVFX;
 
-    Rigidbody rb;
+    private Rigidbody rb;
 
-    int damage;
+    private int damage;
 
     private void Awake()
     {

@@ -7,7 +7,7 @@ public class SpawnGate : MonoBehaviour
     [SerializeField] float spawnTime = 5f;
     [SerializeField] Transform spawnPoint;
 
-    PlayerHealth player;
+    private PlayerHealth player;
 
     private void Start()
     {

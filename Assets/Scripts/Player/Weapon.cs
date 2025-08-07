@@ -6,7 +6,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] ParticleSystem muzzleFlash;
     [SerializeField] LayerMask interactionLayers;
 
-    CinemachineImpulseSource impulseSource;
+    private CinemachineImpulseSource impulseSource;
 
     private void Awake()
     {
@@ -26,6 +26,5 @@ public class Weapon : MonoBehaviour
             EnemyHealth enemyHealth = hit.collider.GetComponentInParent<EnemyHealth>();
             enemyHealth?.TakeDamage(weaponSO.Damage);
         }
-
     }
 }

@@ -5,11 +5,19 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] GameObject robotExplosionVFX;
     [SerializeField] int startingHealth = 3;
 
-    int currentHealth;
+    private GameManager gameManager;
+    
+    private int currentHealth;
 
     private void Awake()
     {
         currentHealth = startingHealth;
+    }
+
+    private void Start()
+    {
+        gameManager = FindFirstObjectByType<GameManager>();
+        gameManager.AdjustEnemiesLeft(1);
     }
 
     public void TakeDamage(int amount)
@@ -18,6 +26,7 @@ public class EnemyHealth : MonoBehaviour
 
         if(currentHealth <= 0)
         {
+            gameManager.AdjustEnemiesLeft(-1);
             SelfDestruct();
         }
     }

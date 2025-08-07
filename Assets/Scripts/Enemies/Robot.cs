@@ -4,8 +4,8 @@ using UnityEngine.AI;
 
 public class Robot : MonoBehaviour
 {
-    FirstPersonController player;
-    NavMeshAgent agent;
+    private FirstPersonController player;
+    private NavMeshAgent agent;
 
     const string PLAYER_STRING = "Player";
 
@@ -33,5 +33,4 @@ public class Robot : MonoBehaviour
             enemyHealth.SelfDestruct();
         }
     }
-
 }

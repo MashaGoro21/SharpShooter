@@ -11,18 +11,18 @@ public class ActiveWeapon : MonoBehaviour
     [SerializeField] GameObject zoomVignette;
     [SerializeField] TMP_Text ammoText;
     
-    WeaponSO currentWeaponSO;
-    Animator animator;
-    StarterAssetsInputs starterAssetsInputs;
-    FirstPersonController firstPersonController;
-    Weapon currentWeapon;
+    private WeaponSO currentWeaponSO;
+    private Animator animator;
+    private StarterAssetsInputs starterAssetsInputs;
+    private FirstPersonController firstPersonController;
+    private Weapon currentWeapon;
 
+    private float timeSinceLastShot = 0f;
+    private float defaultFOV;
+    private float defaultRotationSpeed;
+    private int currentAmmo;
+    
     const string SHOOT_STRING = "Shoot";
-
-    float timeSinceLastShot = 0f;
-    float defaultFOV;
-    float defaultRotationSpeed;
-    int currentAmmo;
 
     private void Awake()
     {

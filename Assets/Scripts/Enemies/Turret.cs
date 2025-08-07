@@ -10,7 +10,7 @@ public class Turret : MonoBehaviour
     [SerializeField] float fireRate = 2f;
     [SerializeField] int damage = 2;
 
-    PlayerHealth player;
+    private PlayerHealth player;
 
     private void Start()
     {
